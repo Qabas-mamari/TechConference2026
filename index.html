@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tech Conference</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="AIvent" name="description" >
+    <meta content="" name="keywords" >
+    <meta content="" name="author" >
+    <!-- CSS Files
+    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/vendors.css" rel="stylesheet" type="text/css" >
+    <link href="css/style.css" rel="stylesheet" type="text/css" >
+    <link href="css/chatbot.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body class="dark-scheme">
+
+    <div id="wrapper">
+
+        <div class="float-text show-on-scroll">
+            <span><a href="#">Scroll to top</a></span>
+        </div>
+        <div class="scrollbar-v show-on-scroll"></div>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+
+        <!-- page preloader close -->
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img class="logo-main" src="images/logo.png" alt="" >
+                                        <img class="logo-scroll" src="images/logo.png" alt="" >
+                                        <img class="logo-mobile" src="images/logo.png" alt="" >
+                                    </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+
+                            <div class="de-flex-col">
+                                <div class="de-flex-col header-col-mid">
+                                    <ul id="mainmenu">
+                                        <li><a class="menu-item active" href="#section-hero">Home</a>
+                                        </li>
+                                        <li><a class="menu-item" href="#section-about">About</a></li>
+                                        <li><a class="menu-item" href="#section-why-attend">Why Attend</a></li>
+                                        <li><a class="menu-item" href="#section-speakers">Speakers</a></li>
+                                        <li><a class="menu-item" href="#section-schedule">Program</a></li>
+                                        <li><a class="menu-item" href="#footer">Contact Us</a></li>
+                                        <li><a class="menu-item" href="#section-venue">Venue</a></li>
+                                        <li><a class="menu-item" href="#section-faq">FAQ</a></li>
+                                       <li><a class="menu-item" href="video.html">Video</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="de-flex-col">
+                                <a class="btn-main fx-slide w-100" href="register.html"><span>Register</span></a>
+
+                                <div class="menu_side_area">
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="section-hero" class="section-dark no-top no-bottom text-light jarallax relative mh-800" data-video-src="mp4:video/6.mov">
+            <div class="gradient-edge-top op-6 h-50 color"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-8"></div>
+            <div class="abs abs-centered z-2 w-80">
+                <div class="container wow scaleIn" data-wow-duration="3s">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="subtitle">The Future of Health</div>
+                            <h1 class="fs-90 text-uppercase fs-sm-12vw mb-4 lh-1">International Conference on Technology & Innovation in Healthcare - Muscat 2026</h1>
+
+                            <div class="d-block d-md-flex justify-content-center">
+                                <div class="d-flex justify-content-center align-items-center mx-4">
+                                    <i class="fa fa-calendar id-color me-3"></i>
+                                    <h4 class="mb-0">January 19–20, 2026</h4>
+                                </div>
+
+                                <div class="d-flex justify-content-center align-items-center mx-4">
+                                    <i class="fa fa-location-pin id-color me-3"></i>
+                                    <h4 class="mb-0">Muscat, Sultanate of Oman</h4>
+                                </div>
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <a class="btn-main mx-2 fx-slide" href="#section-tickets"><span>Register Now!</span></a>
+                            <a class="btn-main btn-line mx-2 fx-slide" href="#section-schedule"><span>View Schedule</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="abs w-100 start-0 bottom-0 z-3">
+                <div class="container">
+                    <div class="sm-hide border-white-op-3 p-40 py-4 rounded-1 bg-blur relative overflow-hidden wow fadeInUp">
+                        <div class="gradient-edge-bottom color start-0 h-50 op-5"></div>
+                        <div class="row g-4 justify-content-between align-items-center relative z-2">
+                            <div class="col-lg-3">
+                                <h2 class="mb-0">Hurry Up!</h2>
+                                <h4 class="mb-0">Book Your Seat Now</h4>
+                            </div>
+                            <div class="col-lg-4">
+                                <div id="defaultCountdown" class="pt-2"></div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="d-flex">
+                                    <i class="fs-60 icofont-google-map id-color"></i>
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Muscat,<br>Oman Exhibition and Conference</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section id="section-about" class="bg-dark section-dark text-light">
+    <div class="container">
+        <div class="row gx-5 align-items-center justify-content-between">
+            <div class="col-lg-6">
+                <div class="me-lg-5 pe-lg-5 py-5 my-5">
+  <div class="subtitle wow fadeInUp" data-wow-delay=".2s">About the Conference</div>
+  <h3 class="wow fadeInUp" data-wow-delay=".4s">International Conference on Technology & Innovation in Healthcare - Muscat 2026</h3>
+  <p class="wow fadeInUp" data-wow-delay=".6s">
+    The International Conference on Technology & Innovation in Healthcare brings together global experts, policymakers,
+    and innovators to explore cutting-edge advancements in digital health, artificial intelligence, and medical technology.
+    The conference aims to foster collaboration and drive transformation in healthcare delivery and innovation across Oman and beyond.
+  </p>
+
+  <ul class="ul-check">
+    <li class="wow fadeInUp" data-wow-delay=".8s">2 days of interactive sessions and technology showcases</li>
+    <li class="wow fadeInUp" data-wow-delay=".9s">Renowned speakers and healthcare innovators from around the world</li>
+    <li class="wow fadeInUp" data-wow-delay="1s">Workshops on AI, digital transformation, and smart health systems</li>
+    <li class="wow fadeInUp" data-wow-delay="1.1s">Networking opportunities for professionals, researchers, and investors</li>
+  </ul>
+</div>
+
+            </div>
+
+                    <div class="col-lg-5">
+                        <div class="wow scaleIn">
+                            <img src="images/misc/c1.png" class="w-100" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+<section class="section-dark p-0" aria-label="section">
+  <div class="bg-color text-light d-flex py-4 lh-1 rot-2">
+    <div class="de-marquee-list-1 wow fadeInLeft" data-wow-duration="3s">
+      <span class="fs-60 mx-3">Digital Health</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">AI in Medicine</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Smart Hospitals</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Oman Vision 2040</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Healthcare Innovation</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Medical Technology</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Future of Care</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+    </div>
+  </div>
+
+  <div class="bg-color-2 text-light d-flex py-4 lh-1 rot-min-1 mt-min-20">
+    <div class="de-marquee-list-2 wow fadeInRight" data-wow-duration="3s">
+      <span class="fs-60 mx-3">Innovation in Healthcare</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Artificial Intelligence</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Smart Diagnostics</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Digital Transformation</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Robotics in Surgery</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Data-Driven Health</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+      <span class="fs-60 mx-3">Muscat 2026</span>
+      <span class="fs-60 mx-3 op-2">/</span>
+    </div>
+  </div>
+</section>
+
+
+        <section id="section-why-attend" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6 offset-lg-3 text-center">
+                        <div class="subtitle wow fadeInUp mb-3">Why Attend</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">What You’ll Gain</h2>
+                        <p class="lead mb-0 wow fadeInUp">Join global healthcare leaders, innovators, and technologists to explore how innovation, data, and digital transformation are reshaping the future of healthcare.</p>
+                    </div>
+                </div>
+
+                <div class="spacer-single"></div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Innovative Insights</h4>
+                                        <p class="mb-0">Stay ahead of the curve with insights from AI leaders shaping tomorrow’s technology.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="images/misc/s1.png" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Hands-On Workshops</h4>
+                                        <p class="mb-0">
+                                            Participate in practical sessions on digital transformation, AI-driven diagnostics, and smart healthcare systems.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="images/misc/s2.png" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Global Collaboration</h4>
+<p class="mb-0">Connect with healthcare professionals, innovators, and researchers from Oman and across the world.</p>                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="images/misc/s3.png" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Healthcare Innovation Expo</h4>
+<p class="mb-0">
+                  Experience cutting-edge medical devices, digital platforms, and AI applications transforming patient care.
+                </p>                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="images/misc/s4.png" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                       <h4>Career & Research Growth</h4>
+<p class="mb-0">
+                  Gain access to mentoring, networking, and funding opportunities for your healthcare research or startup.
+                </p>                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="images/misc/s5.png" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Ethics & Sustainability</h4>
+<p class="mb-0">
+                  Discuss the ethical dimensions of digital healthcare, patient privacy, and sustainable health innovation.
+                </p>                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="images/misc/s6.png" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="section-speakers" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-6 relative z-3">
+                          <div class="text-center">
+  <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Speakers</div>
+  <h2 class="wow fadeInUp" data-wow-delay=".2s">Meet the Visionaries</h2>
+  <p class="lead wow fadeInUp" data-wow-delay=".4s">
+     Inspiring leaders from around the world share insights that are transforming healthcare through technology and innovation.
+
+  </p>
+</div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+                            <img src="images/team/1.png" class="w-100 hover-scale-1-1" alt="">
+                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            <div class="abs w-100 start-0 bottom-0 z-3">
+                                <div class="bg-blur p-1 m-4 rounded-1 text-light text-center relative z-2">
+                                    <h3 class="mb-0">Dr. Amal Al-Hinai</h3>
+          <span>Director of Digital Health Innovation, MOH</span>
+                                </div>
+                                <div class="gradient-edge-bottom h-100 op-8"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+                            <img src="images/team/2.png" class="w-100 hover-scale-1-1" alt="">
+                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            <div class="abs w-100 start-0 bottom-0 z-3">
+                                <div class="bg-blur p-1 m-4 rounded-1 text-light text-center relative z-2">
+                                             <h3 class="mb-0">Eng. Saif Al-Mamari</h3>
+          <span>Healthcare Systems Engineer, Royal Hospital</span>
+                                </div>
+                                <div class="gradient-edge-bottom h-100 op-8"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+                            <img src="images/team/3.png" class="w-100 hover-scale-1-1" alt="">
+                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            <div class="abs w-100 start-0 bottom-0 z-3">
+                                <div class="bg-blur p-1 m-4 rounded-1 text-light text-center relative z-2">
+                                   <h3 class="mb-0">Dr. Fatma Al-Zadjali</h3>
+          <span>AI Researcher, Sultan Qaboos University</span>
+                                </div>
+                                <div class="gradient-edge-bottom h-100 op-8"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark section-dark pt-80 relative jarallax" aria-label="section">
+            
+            <img src="images/background/1.png" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-8"></div>
+            <div class="container">
+                <div class="row g-4">
+                    <div class="subtitle s2 mb-3 wow fadeInUp text-center" data-wow-delay=".0s">Sponsors</div>
+
+                    <div class="col-md-12 wow fadeInUp">
+                        <div class="owl-6 no-alpha owl-carousel owl-theme wow mask-right">
+                            <img src="images/logo-light/1.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/2.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/3.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/4.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/5.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/6.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/7.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/8.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/9.png" class="w-100 px-4" alt="">
+                            <img src="images/logo-light/10.png" class="w-100 px-4" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-schedule" class="bg-dark section-dark text-light">
+            <div class="container">
+              <div class="row g-4 gx-5 justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Conference Program</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">2 Days of Healthcare Innovation</h2>
+                </div>
+              </div>
+              <div class="row g-4 gx-5 justify-content-center wow fadeInUp">
+                <div class="col-lg-12">
+                    <div class="de-tab plain">
+                        <ul class="d-tab-nav mb-4 pb-4 d-flex justify-content-between">
+                            <li class="active-tab">
+                                  <h3>Day 1</h3>
+    Jan 19, 2026
+</li>
+<li>
+    <h3>Day 2</h3>
+    Jan 20, 2026
+</li>
+                        </ul>
+                        <ul class="d-tab-content pt-3 wow fadeInUp">   
+                            <!-- day 1 -->                        
+                            <li>
+                                <!-- schedule item begin -->
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">
+                                            09:00 – 11:00 AM
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <h5 class="mb-0">Dr. Fatma Al-Zadjali</h5>
+                                                   AI Researcher, SQU
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                    <h3>Opening Keynote: AI in Healthcare – Global Trends</h3>
+                    <p class="fs-15 mb-0">Kick off the conference with insights into the latest AI advancements in healthcare, from diagnostics to patient care optimization.</p>
+                </div>
+                                    </div>
+                                </div>
+                                <!-- schedule item end -->
+
+                                <!-- schedule item begin -->
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">
+                                            11:30 – 12:30 PM
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                 <div>
+                            <h5 class="mb-0">Leila Zhang</h5>
+                            VP of Digital Health, HealthTech Global
+                        </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                    <h3>Session: Human-Centered Healthcare Innovation</h3>
+                    <p class="fs-15 mb-0">Explore designing digital solutions that enhance patient experience and improve clinical outcomes.</p>
+                </div>
+                                    </div>
+                                </div>
+                                <!-- schedule item end -->
+
+                                <!-- schedule item begin -->
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">
+                                          13:00 – 16:00 PM
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <h5 class="mb-0">Carlos Rivera</h5>
+                                                   Founder & CEO, HealthAI Labs
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                    <h3>Panel: AI Policy & Regulation in Healthcare</h3>
+                    <p class="fs-15 mb-0">Top experts discuss regulations, data privacy, and ethical considerations in implementing AI for healthcare solutions.</p>
+                </div>
+                                    </div>
+                                </div>
+                                <!-- schedule item end -->
+                            </li>
+
+                            <!-- day 2 -->
+                            <li>
+                               <!-- schedule item begin -->
+    <div class="border-white-bottom-op-2 pb-5 mb-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-2">
+                09:00 – 10:30 AM
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <h5 class="mb-0">Dr. Amal Al-Hinai</h5>
+                        Director of Digital Health Innovation, MOH
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Session: Ethical AI — From Theory to Practice</h3>
+                <p class="fs-15 mb-0">Explore how leading healthcare organizations are implementing fairness, accountability, and transparency in AI systems for patient care.</p>
+            </div>
+        </div>
+    </div>
+    <!-- schedule item end -->
+
+                           <!-- schedule item begin -->
+    <div class="border-white-bottom-op-2 pb-5 mb-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-2">
+                11:00 – 12:30 PM
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <h5 class="mb-0">Eng. Saif Al-Mamari</h5>
+                        Healthcare Systems Engineer, Royal Hospital
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Session: Bias in Healthcare Data — Hidden Dangers</h3>
+                <p class="fs-15 mb-0">Learn how biases in patient data can affect AI-driven diagnostics and strategies to ensure fair and accurate outcomes.</p>
+            </div>
+        </div>
+    </div>
+    <!-- schedule item end -->
+
+                                <!-- schedule item begin -->
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">
+                                            14:00 – 15:30 PM
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <h5 class="mb-0">Markus Blom</h5>
+                                                    CTO, SynthMind AI
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Session: Generative Models Beyond Text</h3>
+                                            <p class="fs-15 mb-0">A practical tour of the next generation of multimodal models generating images, video, and even 3D environments with AI.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- schedule item end -->
+
+
+                            </li>
+
+     
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="section-tickets" class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+            <img src="images/background/7.png" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-7"></div>
+
+            <div class="container relative z-2">
+                <div class="row g-4 gx-5 justify-content-center">
+                  <div class="col-lg-6 text-center">
+                      <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Registration</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Register to Attend</h2>
+            <!-- <p class="lead wow fadeInUp" data-wow-delay=".4s">
+                Secure your spot at the International Conference on Technology & Innovation in Healthcare – Muscat 2026. Gain access to keynote sessions, workshops, and networking opportunities with healthcare and tech experts.
+            </p> -->
+              <a class="btn-main fx-slide" href="register.html"><span>Register</span></a>
+                  </div>
+                </div>
+
+         
+            </div>
+        </section>
+
+        <section id="section-venue" class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+          <div class="container relative z-2">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Event Location</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Location & Venue</h2>
+                    <!-- <p class="lead wow fadeInUp" data-wow-delay=".6s">Join us in the heart of innovation at San Francisco Tech Pavilion—surrounded by top hotels, transit, and culture.</p> -->
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-sm-6">
+                    <img src="images/misc/l1.png" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                </div>
+
+                <div class="col-sm-6">
+                    <img src="images/misc/l2.png" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".2s">
+                        <i class="fs-60 id-color icofont-google-map"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Address</h4>
+                            <!-- <p>Muscat, Oman Exhibition and Conference</p> -->
+                            <a href="https://share.google/C9ukDAH3UEr7PKfEW" class="text-decoration-underline">Muscat, Oman Exhibition and Conference</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </section>
+
+     <section id="section-faq" class="bg-dark section-dark text-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Everything You Need to Know</div>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="accordion s2 wow fadeInUp">
+                    <div class="accordion-section">
+                        <div class="accordion-section-title" data-tab="#accordion-a1">
+                            What is the International Conference on Technology & Innovation in Healthcare – Muscat 2026?
+                        </div>
+                        <div class="accordion-section-content" id="accordion-a1">
+                            This conference brings together healthcare professionals, innovators, and technology experts to explore the latest advancements in healthcare technology, digital health, and medical innovation. It features keynote speeches, workshops, and networking opportunities.
+                        </div>
+
+                        <div class="accordion-section-title" data-tab="#accordion-a2">
+                            When and where will the event be held?
+                        </div>
+                        <div class="accordion-section-content" id="accordion-a2">
+                            The conference will take place on **January 19–20, 2026** in **Muscat, Sultanate of Oman**.
+                        </div>
+
+                        <div class="accordion-section-title" data-tab="#accordion-a3">
+                            How can I register for the conference?
+                        </div>
+                        <div class="accordion-section-content" id="accordion-a3">
+                            You can register through our official website by filling out the registration form to secure your spot at the conference.
+                        </div>
+
+                        <div class="accordion-section-title" data-tab="#accordion-a4">
+                            Who should attend this conference?
+                        </div>
+                        <div class="accordion-section-content" id="accordion-a4">
+                            Healthcare professionals, researchers, technology innovators, policymakers, and students interested in healthcare technology and digital innovation are encouraged to attend.
+                        </div>
+
+                        <div class="accordion-section-title" data-tab="#accordion-a5">
+                            Will virtual participation be available?
+                        </div>
+                        <div class="accordion-section-content" id="accordion-a5">
+                            No, this is an in-person event. All participants are expected to attend in Muscat.
+                        </div>
+
+                        <div class="accordion-section-title" data-tab="#accordion-a6">
+                            Will certificates of participation be provided?
+                        </div>
+                        <div class="accordion-section-content" id="accordion-a6">
+                            Yes, all registered attendees will receive a certificate of participation after the event.
+                        </div>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <section class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+            <img src="images/background/3.png" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-8"></div>
+          <div class="container relative z-2">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Stay in the Loop</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Join the Future of Innovation</h2>
+<div class="wow scaleIn d-flex gap-3 justify-content-center">
+                           <img src="images/misc/Oman.png" class="w-10" alt="">
+                       <img src="images/misc/Oman.png" class="w-10" alt="">
+                        </div>
+
+                     
+                </div>
+            </div>
+
+          
+          </div>
+        </section>
+
+    </div>
+
+    <!-- footer begin -->
+    <footer class="text-light section-dark" id="footert">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-12">
+                    <div class="d-lg-flex align-items-center justify-content-between text-center">
+                        <div>
+                            <h3 class="fs-20">Address</h3>
+                           Muscat <br>
+                            Sultanate of Oman
+                        </div>
+                        <div>
+                            <img src="images/logo.png" class="w-150px" alt=""><br>
+                            <div class="social-icons mb-sm-30">
+                                <a href="#">https://mcmss.gov.om/</a>
+                    
+                            </div>
+
+                        </div>
+                        <div>
+                            <h3 class="fs-20">Contact Us</h3>
+                            T. 21500215<br>
+                            M. info@mcmss.gov.om
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-md-12 text-center">
+                        Copyright 2025 - AIvent by Designesia
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- زر المساعد -->
+<div id="assistant-btn">
+  <img src="img/ai-technology.png" alt="AI Assistant">
+</div>
+
+<!-- الصندوق الرئيسي -->
+<div id="chat-box" dir="ltr" aria-live="polite">
+  <div id="chat-header">
+    <div style="font-weight:800">Smart Assistant</div>
+    <div class="tabs">
+      <button id="menuTab" class="tab-btn active">Menu</button>
+      <button id="contactTab" class="tab-btn">Contact</button>
+      <button id="closeChat" class="tab-btn" style="background:transparent;color:#fff">✖</button>
+    </div>
+  </div>
+
+  <!-- قائمة الخدمات -->
+<div id="menuContent" style="display:flex; flex-direction:column;">
+  <div id="chat-content">
+    <div class="msg bot">👋 Welcome!</div>
+    <div class="msg bot">Please choose the service number you want:</div>
+    <div class="menu-list" style="margin-top:6px;">
+      <div class="menu-item-chat" data-value="1">1️⃣ Scientific name of the conference</div>
+      <div class="menu-item-chat" data-value="2">2️⃣ Official conference date</div>
+      <div class="menu-item-chat" data-value="3">3️⃣ Conference venue</div>
+      <div class="menu-item-chat" data-value="4">4️⃣ Contact support</div>
+    </div>
+  </div>
+  <div id="menu-input">
+    <input id="menuNumber" type="number" placeholder="Type the option number..." />
+  </div>
+</div>
+
+<!-- Contact section -->
+<div id="contactContent" style="display:none; flex-direction:column;">
+  <div id="contact-chat">
+    <div class="msg bot">👋 Hello! This section is for contacting our support staff.</div>
+  </div>
+  <div id="chat-input">
+    <input id="userMessage" type="text" placeholder="Type your message..." />
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script>
+
+</script>
+    <!-- footer end -->
+    
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/vendors.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/countdown-custom.js"></script>
+    <script src="js/custom-marquee.js"></script>
+    <script src="js/chatbot.js"></script>
+
+</body>
+
+</html>

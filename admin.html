@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<title>لوحة الموظف - دردشة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #6c63ff;
+    --primary-dark: #5a52d5;
+    --primary-light: #8b85ff;
+    --secondary: #ff6584;
+    --background: #f8f9fa;
+    --surface: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --text-light: #a0aec0;
+    --border: #e2e8f0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+    --radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  body { 
+    font-family: 'Tajawal', sans-serif; 
+    background: var(--background); 
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  
+  h2 { 
+    text-align: center; 
+    margin: 24px 0 16px; 
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+  }
+
+  /* صندوق تسجيل الدخول */
+  #loginBox { 
+    max-width: 400px; 
+    margin: 80px auto; 
+    background: var(--surface); 
+    padding: 32px; 
+    border-radius: var(--radius-lg); 
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  
+  #loginBox:hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  #loginBox p { 
+    margin-bottom: 20px; 
+    color: var(--text-secondary);
+    text-align: center;
+  }
+  
+  #loginBox input { 
+    width: 100%; 
+    margin-bottom: 16px; 
+    padding: 14px 16px; 
+    border-radius: var(--radius); 
+    border: 1px solid var(--border); 
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  #loginBox input:focus { 
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  }
+  
+  #loginBox button { 
+    width: 100%; 
+    padding: 14px; 
+    border-radius: var(--radius); 
+    background: var(--primary); 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  #loginBox button:hover { 
+    background: var(--primary-dark); 
+    transform: translateY(-2px);
+  }
+
+  /* الحاوية الرئيسية */
+  .container { 
+    display: flex; 
+    gap: 24px; 
+    height: 80vh; 
+    margin: 20px; 
+  }
+
+  /* الشريط الجانبي */
+  .sidebar { 
+    width: 320px; 
+    background: var(--surface); 
+    border-radius: var(--radius-lg); 
+    padding: 16px; 
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .sidebar h3 {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  #usersList {
+    overflow-y: auto;
+    flex: 1;
+    padding: 4px;
+  }
+  
+  .user-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 14px; 
+    border-radius: var(--radius); 
+    cursor: pointer; 
+    margin-bottom: 8px; 
+    transition: var(--transition);
+    border: 1px solid transparent;
+  }
+  
+  .user-item:hover { 
+    background: rgba(108, 99, 255, 0.05); 
+    border-color: rgba(108, 99, 255, 0.1);
+    transform: translateX(-4px);
+  }
+  
+  .user-item.active { 
+    background: var(--primary); 
+    color: #fff; 
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+  }
+  
+  .user-info { 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden;
+    flex: 1;
+  }
+  
+  .user-name { 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  .user-last-msg { 
+    font-size: 0.85rem; 
+    color: var(--text-light); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    margin-top: 4px; 
+  }
+  
+  .user-item.active .user-last-msg {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .new-msg-badge { 
+    width: 12px; 
+    height: 12px; 
+    background: var(--secondary); 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  /* منطقة المحادثة */
+  .main { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    background: var(--surface); 
+    border-radius: var(--radius-lg); 
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  .messages-header { 
+    padding: 16px 20px; 
+    border-bottom: 1px solid var(--border); 
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(248, 249, 250, 0.7);
+  }
+  
+  .messages { 
+    flex: 1; 
+    overflow-y: auto; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+    background: #fbfbff; 
+    scroll-behavior: smooth; 
+  }
+  
+  .msg { 
+    padding: 12px 16px; 
+    border-radius: 18px; 
+    max-width: 75%; 
+    position: relative; 
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .msg.user { 
+    background: var(--primary); 
+    color: #fff; 
+    align-self: flex-end; 
+    border-bottom-right-radius: 4px; 
+  }
+  
+  .msg.admin { 
+    background: #eae6ff; 
+    color: var(--text-primary); 
+    align-self: flex-start; 
+    border-bottom-left-radius: 4px; 
+  }
+  
+  .msg-time { 
+    font-size: 0.75rem; 
+    opacity: 0.7; 
+    margin-top: 6px; 
+    text-align: left;
+  }
+  
+  .msg.user .msg-time {
+    text-align: right;
+  }
+
+  /* منطقة الإرسال */
+  .send-area { 
+    display: flex; 
+    gap: 12px; 
+    padding: 16px 20px; 
+    border-top: 1px solid var(--border); 
+    background: var(--surface);
+  }
+  
+  input[type=text] { 
+    flex: 1; 
+    padding: 12px 16px; 
+    border-radius: 24px; 
+    border: 1px solid var(--border); 
+    outline: none; 
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  input[type=text]:focus { 
+    border-color: var(--primary); 
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  }
+  
+  button { 
+    padding: 12px 20px; 
+    border-radius: 24px; 
+    background: var(--primary); 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  button:hover { 
+    background: var(--primary-dark); 
+    transform: translateY(-2px);
+  }
+  
+  #logoutBtn { 
+    margin: 16px 20px; 
+    background: var(--secondary);
+    align-self: flex-start;
+  }
+  
+  #logoutBtn:hover {
+    background: #e04e70;
+  }
+
+  /* تحسينات للشريط الجانبي */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+  }
+  
+  .empty-state p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* تحسينات للرسائل */
+  .no-messages {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+  }
+  
+  /* تحسينات للتمرير */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+</style>
+</head>
+<body>
+<h2>لوحة الموظف — دردشة المستخدمين</h2>
+
+<!-- صفحة تسجيل الدخول -->
+<div id="loginBox">
+  <p>أدخل كلمة مرور المدير للوصول:</p>
+  <input type="password" id="adminPass" placeholder="كلمة المرور" />
+  <button id="loginBtn">تسجيل الدخول</button>
+  <p id="loginMsg" style="color: var(--secondary); margin-top: 12px; text-align: center;"></p>
+</div>
+
+<!-- تطبيق الدردشة -->
+<div id="app" style="display:none;">
+  <div class="container">
+    <div class="sidebar">
+      <h3>المستخدمون</h3>
+      <div id="usersList">
+        <!-- سيتم ملؤها ديناميكياً -->
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="messages-header" id="convTitle">اختر مستخدمًا لبدء المحادثة</div>
+      <div class="messages" id="messagesBox">
+        <!-- سيتم ملؤها ديناميكياً -->
+      </div>
+      <div class="send-area">
+        <input type="text" id="adminMessage" placeholder="اكتب ردك..." />
+        <button id="sendAdminBtn">إرسال</button>
+      </div>
+    </div>
+  </div>
+  <button id="logoutBtn">تسجيل خروج</button>
+</div>
+
+<script>
+const API = 'server.php';
+let selectedUserId = 0;
+let lastMessageCount = 0;
+
+const loginBox = document.getElementById('loginBox');
+const loginBtn = document.getElementById('loginBtn');
+const loginMsg = document.getElementById('loginMsg');
+const adminPass = document.getElementById('adminPass');
+
+const app = document.getElementById('app');
+const usersList = document.getElementById('usersList');
+const messagesBox = document.getElementById('messagesBox');
+const convTitle = document.getElementById('convTitle');
+const adminMessage = document.getElementById('adminMessage');
+const sendAdminBtn = document.getElementById('sendAdminBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+
+// تسجيل الدخول
+loginBtn.addEventListener('click', async () => {
+  const pass = adminPass.value.trim();
+  if (!pass) return loginMsg.textContent = 'أدخل كلمة المرور';
+  const res = await fetch(API, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ action:'admin_login', password: pass })
+  });
+  const j = await res.json();
+  if (j.ok) {
+    loginBox.style.display = 'none';
+    app.style.display = 'block';
+    loadUsers();
+    startMessagePolling();
+  } else {
+    loginMsg.textContent = j.error || 'فشل في تسجيل الدخول';
+  }
+});
+
+// تحميل المستخدمين مع Badge للرسائل الجديدة
+async function loadUsers() {
+  const res = await fetch(API + '?action=list_users');
+  const j = await res.json();
+  if (j.error) { console.error(j); return; }
+
+  usersList.innerHTML = '';
+  
+  if (j.users.length === 0) {
+    usersList.innerHTML = `
+      <div class="empty-state">
+        <p>لا يوجد مستخدمين نشطين</p>
+      </div>
+    `;
+    return;
+  }
+  
+  j.users.forEach(u => {
+    const div = document.createElement('div');
+    div.className = 'user-item';
+    div.dataset.userid = u.id;
+
+    const badge = u.has_new_message > 0 ? `<span class="new-msg-badge"></span>` : '';
+
+    div.innerHTML = `
+      <div class="user-info">
+        <span class="user-name">${u.browser_id}</span>
+        <span class="user-last-msg">${u.last_message || ''}</span>
+      </div>
+      ${badge}
+    `;
+    div.addEventListener('click', () => selectUser(u.id, u.browser_id, div));
+    usersList.appendChild(div);
+  });
+}
+
+// فتح المحادثة وإزالة Badge
+async function selectUser(id, browser_id, el) {
+  selectedUserId = id;
+  convTitle.textContent = `المحادثة مع: ${browser_id}`;
+  document.querySelectorAll('.user-item').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  
+  // إعلام الخادم بأن المدير قد شاهد الرسائل (إزالة النقطة الحمراء)
+  await markMessagesAsRead(id);
+  
+  loadConversation(id);
+
+  // إزالة Badge محلياً أيضاً
+  const badgeEl = el.querySelector('.new-msg-badge');
+  if (badgeEl) badgeEl.remove();
+}
+
+// إعلام الخادم بأن الرسائل قد تمت قراءتها
+async function markMessagesAsRead(user_id) {
+  try {
+    await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ action: 'mark_as_read', user_id: user_id })
+    });
+  } catch (error) {
+    console.error('Error marking messages as read:', error);
+  }
+}
+
+// تحميل المحادثة
+async function loadConversation(user_id) {
+  const res = await fetch(API + `?action=get_conversation&user_id=${user_id}`);
+  const j = await res.json();
+  if (j.error) { console.error(j); return; }
+
+  lastMessageCount = j.messages.length;
+  
+  messagesBox.innerHTML = '';
+  
+  if (j.messages.length === 0) {
+    messagesBox.innerHTML = `
+      <div class="no-messages">
+        <p>لا توجد رسائل بعد</p>
+        <p>ابدأ المحادثة مع هذا المستخدم</p>
+      </div>
+    `;
+    return;
+  }
+  
+  j.messages.forEach(m => {
+    addMessageToChat(m, false);
+  });
+  
+  messagesBox.scrollTop = messagesBox.scrollHeight;
+}
+
+// إضافة رسالة جديدة إلى الدردشة
+function addMessageToChat(message, scrollToBottom = true) {
+  const noMessagesEl = messagesBox.querySelector('.no-messages');
+  if (noMessagesEl) {
+    noMessagesEl.remove();
+  }
+  
+  const d = document.createElement('div');
+  d.className = 'msg ' + (message.sender === 'user' ? 'user' : 'admin');
+  d.textContent = message.message;
+  const t = document.createElement('div'); 
+  t.className = 'msg-time';
+  t.textContent = message.created_at;
+  d.appendChild(t);
+  messagesBox.appendChild(d);
+  
+  if (scrollToBottom) {
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+}
+
+// إرسال رسالة من المدير
+// إرسال رسالة من المدير
+sendAdminBtn.addEventListener('click', async () => {
+  const txt = adminMessage.value.trim();
+  if (!txt || !selectedUserId) return;
+
+  adminMessage.value = ''; // مسح النص فورًا
+
+  const res = await fetch(API, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ action:'send_message', sender:'admin', user_id: selectedUserId, message: txt })
+  });
+
+  const j = await res.json();
+  if (j.ok) {
+    loadUsers();       // تحديث قائمة المستخدمين
+    checkNewMessages(); // جلب الرسائل من السيرفر (ستظهر رسالة المدير)
+  }
+});
+
+// التحقق من الرسائل الجديدة
+async function checkNewMessages() {
+  if (!selectedUserId) return;
+  
+  const res = await fetch(API + `?action=get_conversation&user_id=${selectedUserId}`);
+  const j = await res.json();
+  
+  if (j.error) return;
+  
+  if (j.messages.length > lastMessageCount) {
+    const newMessages = j.messages.slice(lastMessageCount);
+    newMessages.forEach(msg => {
+      addMessageToChat(msg);
+    });
+    
+    lastMessageCount = j.messages.length;
+    
+    loadUsers();
+  }
+  
+  // التحقق من جميع المستخدمين للحصول على النقاط الحمراء
+  loadUsers();
+}
+
+// بدء التحقق الدوري من الرسائل الجديدة
+function startMessagePolling() {
+  setInterval(checkNewMessages, 2000);
+}
+
+// تسجيل خروج
+logoutBtn.addEventListener('click', async () => {
+  await fetch(API + '?action=admin_logout');
+  location.reload();
+});
+
+// إرسال بالضغط على Enter
+adminMessage.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    sendAdminBtn.click();
+  }
+});
+</script>
+</body>
+</html>

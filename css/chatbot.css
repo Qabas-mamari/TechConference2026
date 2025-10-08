@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+#assistant-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 70px;
+    height: 70px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#assistant-btn img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* يجعل الأيقونة بيضاء لتتناسب مع البنفسجي */
+    transition: transform 0.3s ease;
+}
+
+#assistant-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+#assistant-btn:hover img {
+    transform: rotate(10deg);
+}
+
+#chat-box {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 420px;
+    max-width: calc(100% - 50px);
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+    font-family: 'Tajawal', sans-serif;
+}
+
+#chat-header {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tabs {
+    display: flex;
+    gap: 6px;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .2s ease;
+}
+
+.tab-btn.active {
+    background: white;
+    color: var(--secondary-color);
+}
+
+#chat-content,
+#contact-chat {
+    padding: 14px;
+    height: 300px;
+    overflow-y: auto;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg {
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+    animation: pop .18s ease;
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(.98)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.bot {
+    background: #efe6ff;
+    align-self: flex-start;
+    color: #222;
+}
+
+.user {
+    background: var(--secondary-color);
+    color: white;
+    align-self: flex-end;
+}
+
+.admin {
+    background: #cce5ff;
+    align-self: flex-start;
+    color: #003366;
+}
+
+/* ✅ مدخل القائمة */
+#menu-input {
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#menuNumber {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    transition: border .2s ease;
+    font-family: 'Tajawal', sans-serif;
+}
+
+#menuNumber:focus {
+    border-color:var(--secondary-color);
+}
+
+#chat-input {
+    display: flex;
+    border-top: 1px solid #eee;
+    padding: 10px;
+    background: white;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+#chat-input button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+#chat-input button:hover {
+    background: var(--secondary-color);
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item-chat {
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    border: 1px solid #cfeefc;
+    color: #003a6b;
+    transition: background .2s ease;
+}
+
+.menu-item-chat:hover {
+    background: #d2ecff;
+}
